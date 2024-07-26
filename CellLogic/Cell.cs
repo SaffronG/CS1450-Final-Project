@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace CellLogic;
+﻿namespace CellLogic;
 
 public class Cell : ICell
 {
@@ -27,6 +25,7 @@ public class Cell : ICell
         // Death rule: A live cell with zero or one neighbors dies of isolation; a live cell with four or more neighbors dies of overcrowding.
         return false;
     }
+
 
     public int evolutionMath(CellAutomata automata, Evolution conditional) {
         int xOffset = 0, yOffset =0;
@@ -59,10 +58,12 @@ public class Cell : ICell
                 xOffset = -1; yOffset = -1;
                 break;
         }
-
-        if (automata.frameOne?[location.Y+yOffset, location.X+xOffset] is not null)
-            return automata.frameOne[location.Y+yOffset, location.X+xOffset].status == Status.Alive ? 1 : 0;
-        return 0;
+        
+        try {
+            return automata.getCurrentFrame()[location.Y+yOffset, location.X+xOffset].status == Status.Alive ? 1 : 0;
+        } catch (IndexOutOfRangeException) {
+            return 0;
+        }
     }
 
     public void Display( int width)

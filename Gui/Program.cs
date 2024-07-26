@@ -1,4 +1,5 @@
-﻿using CellLogic;
+﻿using System.Reflection.Metadata;
+using CellLogic;
 
 namespace GUI;
 
@@ -8,8 +9,18 @@ public class Program {
         CellAutomata logic = new CellAutomata(int.Parse(args[0]), int.Parse(args[1]));
         GUIFunctions gui = new GUIFunctions(logic);
         
-        Console.Clear();
+        gui.InitLivingCells(logic);
+
+        while (true) {
         gui.Display(logic);
+        if (gui.CellSelect(Console.ReadKey(true))) break;
+        }
+
+        while (true) {
+            gui.Display(logic);
+            Thread.Sleep(50);
+            logic.EvolveFrame();
+        }
     }
 }
 
@@ -23,32 +34,34 @@ public class GUIFunctions {
         current = new Location(0,0);
     }
 
-    public void CellSelect(ConsoleKeyInfo keystroke) {
+    public bool CellSelect(ConsoleKeyInfo keystroke) {
         switch (keystroke.Key) {
             case ConsoleKey.W or ConsoleKey.UpArrow:
-                SetCursorPosition(0,2);
+                SetCursorPosition(logic, 0,-2);
                 break;
             case ConsoleKey.A or ConsoleKey.LeftArrow:
-                SetCursorPosition(-2,0);
+                SetCursorPosition(logic, -2,0);
                 break;
             case ConsoleKey.S or ConsoleKey.DownArrow:
-                SetCursorPosition(0,-2);
+                SetCursorPosition(logic, 0,2);
                 break;
             case ConsoleKey.D or ConsoleKey.RightArrow:
-                SetCursorPosition(2,0);
+                SetCursorPosition(logic, 2,0);
                 break;
             case ConsoleKey.Enter or ConsoleKey.T:
                 logic.getCurrentFrame()[current.Y/2,current.X/2].ToggleStatus();
                 break;
             case ConsoleKey.Escape:
-                Environment.Exit(0);
-                break;
+                logic.getCurrentFrame()[current.Y/2, current.X/2].Select();
+                return true;
             default:
                 break;
         }
+        return false;
     }
 
     public void Display(CellAutomata automata) {
+        Console.Clear();
         Cell[,] currentFrame;
 
         if (automata.currentFrame == 1)
@@ -64,8 +77,10 @@ public class GUIFunctions {
         currentFrame[0,0].Select();
     }
 
-    public void SetCursorPosition(int left, int right) {
-        current = new Location(left+current.X, right+current.Y);
-        Console.SetCursorPosition(current.X, current.Y);
+    public void SetCursorPosition(CellAutomata automata, int left, int right) {
+        automata.getCurrentFrame()[current.Y/2, current.X/2].Select();
+        current = new Location(current.X+left, current.Y+right);
+        automata.getCurrentFrame()[current.Y/2, current.X/2].Select();
+        Console.SetCursorPosition(current.X, current.Y/2);
     }
 }
