@@ -10,3 +10,15 @@ D:\Coding Projects\Python API Client\CS1450-Final-Project\CellLogic\obj\Debug\ne
 D:\Coding Projects\Python API Client\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\refint\CellLogic.dll
 D:\Coding Projects\Python API Client\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.pdb
 D:\Coding Projects\Python API Client\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\ref\CellLogic.dll
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\bin\Debug\net8.0\CellLogic.deps.json
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\bin\Debug\net8.0\CellLogic.dll
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\bin\Debug\net8.0\CellLogic.pdb
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.AssemblyInfoInputs.cache
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.AssemblyInfo.cs
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.csproj.CoreCompileInputs.cache
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.sourcelink.json
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.dll
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\refint\CellLogic.dll
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\CellLogic.pdb
+C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\CellLogic\obj\Debug\net8.0\ref\CellLogic.dll

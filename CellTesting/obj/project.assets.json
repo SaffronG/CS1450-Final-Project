@@ -5534,19 +5534,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Chase\\.nuget\\packages\\": {}
+    "C:\\Users\\chase\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding Projects\\Python API Client\\CS1450-Final-Project\\CellTesting\\CellTesting.csproj",
+      "projectUniqueName": "C:\\Users\\chase\\1400_day1\\GitHomeworkFolder\\CS1450-Final-Project\\CellTesting\\CellTesting.csproj",
       "projectName": "CellTesting",
-      "projectPath": "D:\\Coding Projects\\Python API Client\\CS1450-Final-Project\\CellTesting\\CellTesting.csproj",
-      "packagesPath": "C:\\Users\\Chase\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding Projects\\Python API Client\\CS1450-Final-Project\\CellTesting\\obj\\",
+      "projectPath": "C:\\Users\\chase\\1400_day1\\GitHomeworkFolder\\CS1450-Final-Project\\CellTesting\\CellTesting.csproj",
+      "packagesPath": "C:\\Users\\chase\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chase\\1400_day1\\GitHomeworkFolder\\CS1450-Final-Project\\CellTesting\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Chase\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chase\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5554,14 +5559,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Coding Projects\\Python API Client\\CS1450-Final-Project\\CellLogic\\CellLogic.csproj": {
-              "projectPath": "D:\\Coding Projects\\Python API Client\\CS1450-Final-Project\\CellLogic\\CellLogic.csproj"
+            "C:\\Users\\chase\\1400_day1\\GitHomeworkFolder\\CS1450-Final-Project\\CellLogic\\CellLogic.csproj": {
+              "projectPath": "C:\\Users\\chase\\1400_day1\\GitHomeworkFolder\\CS1450-Final-Project\\CellLogic\\CellLogic.csproj"
             }
           }
         }
@@ -5613,7 +5619,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
