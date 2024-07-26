@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Gui/1.0.0": {
+        "dependencies": {
+          "CellLogic": "1.0.0"
+        },
+        "runtime": {
+          "Gui.dll": {}
+        }
+      },
+      "CellLogic/1.0.0": {
+        "runtime": {
+          "CellLogic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Gui/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CellLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
