@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Diagnostics;
-using CellLogic;
-using Microsoft.VisualBasic;
+﻿using CellLogic;
 
 namespace GUI;
 
