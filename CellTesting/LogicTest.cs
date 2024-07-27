@@ -20,6 +20,23 @@ public class UnitTest1
         Assert.Equal(0, logic.getCurrentFrame()[1,2].evolutionMath(logic, Evolution.Right));
     }
     [Fact]
+    public void IsCorrectEvolutionMath()
+    {
+        CellAutomata logic = new(3,3);
+
+        logic.frameOne[0,1].ToggleStatus();
+        logic.frameOne[1,0].ToggleStatus();
+        logic.frameOne[2,1].ToggleStatus();
+
+        int expected = 3;
+        int result = 0;
+
+        for (int i = 0; i < 8; i++) // 1-7
+            result += logic.getCurrentFrame()[1,1].evolutionMath(logic, (Evolution) (0b1 << i));
+
+        Assert.Equal(expected, result);
+    }
+    [Fact]
     public void DoesEvolve()
     {
         // Given

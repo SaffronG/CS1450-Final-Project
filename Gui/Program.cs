@@ -18,7 +18,7 @@ public class Program {
 
         while (true) {
             gui.Display(logic);
-            Thread.Sleep(50);
+            Thread.Sleep(1000);
             logic.EvolveFrame();
         }
     }
