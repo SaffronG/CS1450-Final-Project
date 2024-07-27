@@ -36,12 +36,10 @@ public class CellAutomata
         if (currentFrame == 1)
         {
             baseFrame = frameOne;
-            // frameTwo = PopulateBoard(height,width);
             evolveFrame = frameTwo;
         }
         else {
             baseFrame = frameTwo;
-            // frameOne = PopulateBoard(height,width);
             evolveFrame = frameOne;
         }
 
