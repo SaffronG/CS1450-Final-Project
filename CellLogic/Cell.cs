@@ -19,16 +19,17 @@ public class Cell : ICell
             threshold+= evolutionMath(automata, (Evolution) (0b1 << i));
 
         // Birth rule: An empty, or “dead,” cell with precisely three “live” neighbors (full cells) becomes live.
-        if (threshold == 3) return true;
+        if (threshold < 2) return false;
         // Survival rule: A live cell with two or three neighbors remains alive.
-        if (threshold >= 2 && threshold <= 3) return true;
+        if (threshold > 3) return false;
         // Death rule: A live cell with zero or one neighbors dies of isolation; a live cell with four or more neighbors dies of overcrowding.
-        return false;
+        return true;
     }
 
 
     public int evolutionMath(CellAutomata automata, Evolution conditional) {
         int xOffset = 0, yOffset =0;
+
         switch (conditional) {
             case Evolution.Top:
                 yOffset = -1;
@@ -81,7 +82,7 @@ public class Cell : ICell
 
         Console.BackgroundColor = default; Console.ForegroundColor = default; // Reset to the default
     }
-    public void ToggleStatus() => status = (status == Status.Alive) ? Status.Dead : Status.Alive;
+    public void ToggleStatus(bool DoesEvolve) => status = DoesEvolve ? Status.Alive : Status.Dead;
     public void Select() => isSelected = isSelected ? false : true;
 
 }

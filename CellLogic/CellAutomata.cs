@@ -14,21 +14,21 @@ public class CellAutomata
     public CellAutomata(int dimensionX, int dimensionY) {
         width = dimensionX;
         height = dimensionY;
-        frameOne = new Cell[height, width];
-        frameTwo = new Cell[height, width];
-        PopulateBoard();
+        frameOne = PopulateBoard(height,width);
+        frameTwo = PopulateBoard(height,width);
     }
 
-    public void PopulateBoard() {
-        for (int y = 0; y < frameOne.GetLength(0); y++)
-            for (int x = 0; x < frameOne.GetLength(1); x++)
+    public Cell[,] PopulateBoard(int h, int w) {
+        Cell[,] returnBoard = new Cell[h,w];
+        for (int y = 0; y < h; y++)
+            for (int x = 0; x < w; x++)
             {
-                frameOne[y,x] = new Cell(new Location(x,y));
-                frameTwo[y,x] = new Cell(new Location(x,y));
+                returnBoard[y,x] = new Cell(new Location(x,y));
             }
+        return returnBoard;
     }
 
-    public Cell[,] getCurrentFrame() =>  currentFrame == 1 ? frameOne : frameTwo;
+    public Cell[,] getCurrentFrame() => currentFrame == 1 ? frameOne : frameTwo;
 
     public void EvolveFrame() {
         Cell[,] baseFrame, evolveFrame;
@@ -36,22 +36,19 @@ public class CellAutomata
         if (currentFrame == 1)
         {
             baseFrame = frameOne;
+            // frameTwo = PopulateBoard(height,width);
             evolveFrame = frameTwo;
-            currentFrame = 2;
         }
         else {
             baseFrame = frameTwo;
+            // frameOne = PopulateBoard(height,width);
             evolveFrame = frameOne;
-            currentFrame = 1;
         }
 
         for (int y = 0; y < baseFrame.GetLength(0); y++)
             for (int x = 0; x < baseFrame.GetLength(1); x++)
-            {
-                if (baseFrame[y,x].DoesEvolve(this))
-                    evolveFrame[y,x].status = Status.Alive;
-                else
-                    evolveFrame[y,x].status = Status.Dead;
-            }
+                evolveFrame[y,x].ToggleStatus(evolveFrame[y,x].DoesEvolve(this));
+
+        currentFrame = currentFrame == 1 ? 2 : 1;
     }
 }

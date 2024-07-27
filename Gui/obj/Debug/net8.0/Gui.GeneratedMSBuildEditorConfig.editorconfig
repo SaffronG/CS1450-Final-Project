@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gui
-build_property.ProjectDir = C:\Users\chase\1400_day1\GitHomeworkFolder\CS1450-Final-Project\Gui\
+build_property.ProjectDir = D:\Coding Projects\Python API Client\CS1450-Final-Project\gui\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

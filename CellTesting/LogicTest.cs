@@ -19,16 +19,30 @@ public class UnitTest1
         Assert.Equal(1, logic.getCurrentFrame()[1,2].evolutionMath(logic, Evolution.BottomLeft));
         Assert.Equal(0, logic.getCurrentFrame()[1,2].evolutionMath(logic, Evolution.Right));
     }
+    public void IsCorrectEvolution2()
+    {
+        CellAutomata logic = new(3,3);
+
+        logic.frameOne[0,1].ToggleStatus();
+        logic.frameOne[1,1].ToggleStatus();
+        logic.frameOne[2,1].ToggleStatus();
+
+        Assert.Equal(0, logic.getCurrentFrame()[1,1].evolutionMath(logic, Evolution.Left));
+        Assert.Equal(0, logic.getCurrentFrame()[1,1].evolutionMath(logic, Evolution.Right));
+        Assert.Equal(1, logic.getCurrentFrame()[1,1].evolutionMath(logic, Evolution.Bottom));
+        Assert.Equal(1, logic.getCurrentFrame()[1,0].evolutionMath(logic, Evolution.Right));
+        Assert.Equal(1, logic.getCurrentFrame()[1,2].evolutionMath(logic, Evolution.Left));
+    }
     [Fact]
     public void IsCorrectEvolutionMath()
     {
         CellAutomata logic = new(3,3);
 
         logic.frameOne[0,1].ToggleStatus();
-        logic.frameOne[1,0].ToggleStatus();
+        logic.frameOne[1,1].ToggleStatus();
         logic.frameOne[2,1].ToggleStatus();
 
-        int expected = 3;
+        int expected = 2;
         int result = 0;
 
         for (int i = 0; i < 8; i++) // 1-7

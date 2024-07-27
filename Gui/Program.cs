@@ -18,7 +18,7 @@ public class Program {
 
         while (true) {
             gui.Display(logic);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             logic.EvolveFrame();
         }
     }
@@ -49,7 +49,10 @@ public class GUIFunctions {
                 SetCursorPosition(logic, 2,0);
                 break;
             case ConsoleKey.Enter or ConsoleKey.T:
-                logic.getCurrentFrame()[current.Y/2,current.X/2].ToggleStatus();
+                logic.getCurrentFrame()[current.Y/2,current.X/2].ToggleStatus(true);
+                break;
+            case ConsoleKey.Delete or ConsoleKey.X:
+                logic.getCurrentFrame()[current.Y/2,current.X/2].ToggleStatus(false);
                 break;
             case ConsoleKey.Escape:
                 logic.getCurrentFrame()[current.Y/2, current.X/2].Select();

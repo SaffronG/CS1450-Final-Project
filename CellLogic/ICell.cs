@@ -7,6 +7,6 @@ public interface ICell
     public bool isSelected { get; set; } // For the GUI elements
     public abstract void Display(int width);
     public abstract bool DoesEvolve(CellAutomata automata);
-    public abstract void ToggleStatus();
+    public abstract void ToggleStatus(bool condition);
     public abstract void Select();
 }
