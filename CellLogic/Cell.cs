@@ -13,22 +13,23 @@ public class Cell : ICell
     }
 
     public bool DoesEvolve(CellAutomata automata) {
-        int threshold = 0;
+        int neighbors = 0;
 
         for (int i = 0; i < 8; i++) // 1-7
-            threshold+= evolutionMath(automata, (Evolution) (0b1 << i));
+            neighbors+= evolutionMath(automata, (Evolution) (0b1 << i));
 
         // Birth rule: An empty, or “dead,” cell with precisely three “live” neighbors (full cells) becomes live.
-        if (threshold < 2) return false;
+        if (neighbors < 2) return false;
         // Survival rule: A live cell with two or three neighbors remains alive.
-        if (threshold > 3) return false;
+        if (neighbors >= 2 && neighbors <= 3 && status == Status.Alive) return true;
+        if (neighbors == 3 && status == Status.Dead) return true;
         // Death rule: A live cell with zero or one neighbors dies of isolation; a live cell with four or more neighbors dies of overcrowding.
-        return true;
+        return false;
     }
 
 
     public int evolutionMath(CellAutomata automata, Evolution conditional) {
-        int xOffset = 0, yOffset =0;
+        int xOffset = 0, yOffset = 0;
 
         switch (conditional) {
             case Evolution.Top:

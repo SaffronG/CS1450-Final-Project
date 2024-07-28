@@ -1,5 +1,6 @@
 ﻿using System.Dynamic;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace CellLogic;
 
@@ -29,23 +30,16 @@ public class CellAutomata
     }
 
     public Cell[,] getCurrentFrame() => currentFrame == 1 ? frameOne : frameTwo;
+    public Cell[,] getNextFrame() => currentFrame == 1 ? frameTwo : frameOne;
+
 
     public void EvolveFrame() {
-        Cell[,] baseFrame, evolveFrame;
+        Cell[,] baseFrame = getCurrentFrame();
+        Cell[,] evolveFrame = getNextFrame();
 
-        if (currentFrame == 1)
-        {
-            baseFrame = frameOne;
-            evolveFrame = frameTwo;
-        }
-        else {
-            baseFrame = frameTwo;
-            evolveFrame = frameOne;
-        }
-
-        for (int y = 0; y < baseFrame.GetLength(0); y++)
-            for (int x = 0; x < baseFrame.GetLength(1); x++)
-                evolveFrame[y,x].ToggleStatus(evolveFrame[y,x].DoesEvolve(this));
+        for (int y = 0; y < evolveFrame.GetLength(0); y++)
+            for (int x = 0; x < evolveFrame.GetLength(1); x++)
+                evolveFrame[y,x].ToggleStatus(baseFrame[y,x].DoesEvolve(this));
 
         currentFrame = currentFrame == 1 ? 2 : 1;
     }

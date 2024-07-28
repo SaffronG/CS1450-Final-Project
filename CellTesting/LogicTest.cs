@@ -9,9 +9,9 @@ public class UnitTest1
     {
         CellAutomata logic = new(3,3);
 
-        logic.frameOne[0,1].ToggleStatus();
-        logic.frameOne[1,0].ToggleStatus();
-        logic.frameOne[2,1].ToggleStatus();
+        logic.frameOne[0,1].ToggleStatus(true);
+        logic.frameOne[1,0].ToggleStatus(true);
+        logic.frameOne[2,1].ToggleStatus(true);
 
         Assert.Equal(1, logic.getCurrentFrame()[0,0].evolutionMath(logic, Evolution.Bottom));
         Assert.Equal(1, logic.getCurrentFrame()[1,2].evolutionMath(logic, Evolution.TopLeft));
@@ -19,13 +19,14 @@ public class UnitTest1
         Assert.Equal(1, logic.getCurrentFrame()[1,2].evolutionMath(logic, Evolution.BottomLeft));
         Assert.Equal(0, logic.getCurrentFrame()[1,2].evolutionMath(logic, Evolution.Right));
     }
+    [Fact]
     public void IsCorrectEvolution2()
     {
         CellAutomata logic = new(3,3);
 
-        logic.frameOne[0,1].ToggleStatus();
-        logic.frameOne[1,1].ToggleStatus();
-        logic.frameOne[2,1].ToggleStatus();
+        logic.frameOne[0,1].ToggleStatus(true);
+        logic.frameOne[1,1].ToggleStatus(true);
+        logic.frameOne[2,1].ToggleStatus(true);
 
         Assert.Equal(0, logic.getCurrentFrame()[1,1].evolutionMath(logic, Evolution.Left));
         Assert.Equal(0, logic.getCurrentFrame()[1,1].evolutionMath(logic, Evolution.Right));
@@ -38,9 +39,9 @@ public class UnitTest1
     {
         CellAutomata logic = new(3,3);
 
-        logic.frameOne[0,1].ToggleStatus();
-        logic.frameOne[1,1].ToggleStatus();
-        logic.frameOne[2,1].ToggleStatus();
+        logic.frameOne[0,1].ToggleStatus(true);
+        logic.frameOne[1,1].ToggleStatus(true);
+        logic.frameOne[2,1].ToggleStatus(true);
 
         int expected = 2;
         int result = 0;
@@ -56,9 +57,9 @@ public class UnitTest1
         // Given
         CellAutomata logic = new (3,3);
 
-        logic.frameOne[0,1].ToggleStatus();
-        logic.frameOne[1,0].ToggleStatus();
-        logic.frameOne[2,1].ToggleStatus();
+        logic.frameOne[0,1].ToggleStatus(true);
+        logic.frameOne[1,0].ToggleStatus(true);
+        logic.frameOne[2,1].ToggleStatus(true);
 
         // When
         bool result = logic.getCurrentFrame()[1,1].DoesEvolve(logic);
