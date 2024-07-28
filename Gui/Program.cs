@@ -83,9 +83,8 @@ public class GUIFunctions {
     }
 
     public void SetCursorPosition(CellAutomata automata, int left, int right) {
-        var previous = new Location(current.X, current.Y);
         automata.getCurrentFrame()[current.Y/2, current.X/2].Select();
-        current = new Location(current.X+left, current.Y+right);
+        current = new Location(int.Clamp(current.X+left, 0, (automata.width*2)-1), int.Clamp(current.Y+right, 0, (automata.height*2)-1));
         automata.getCurrentFrame()[current.Y/2, current.X/2].Select();
         Console.SetCursorPosition(current.X, current.Y/2);
     }
