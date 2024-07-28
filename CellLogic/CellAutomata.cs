@@ -11,7 +11,7 @@ public class CellAutomata
     public Cell[,] frameOne;
     public Cell[,] frameTwo;
     public int currentFrame = 1;
-
+    public int currentGeneration = 0;
     public CellAutomata(int dimensionX, int dimensionY) {
         width = dimensionX;
         height = dimensionY;
@@ -42,5 +42,6 @@ public class CellAutomata
                 evolveFrame[y,x].ToggleStatus(baseFrame[y,x].DoesEvolve(this));
 
         currentFrame = currentFrame == 1 ? 2 : 1;
+        currentGeneration++;
     }
 }

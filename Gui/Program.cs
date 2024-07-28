@@ -12,8 +12,9 @@ public class Program {
         gui.InitLivingCells(logic);
 
         while (true) {
+        var current = Console.GetCursorPosition();
         gui.Display(logic);
-        if (gui.CellSelect(Console.ReadKey(true))) break;
+            if (gui.CellSelect(Console.ReadKey(true))) break;
         }
 
         while (true) {
@@ -74,6 +75,7 @@ public class GUIFunctions {
 
         foreach (ICell cell in currentFrame)
             cell.Display(automata.width);
+        Console.WriteLine($"\nCurrent Generation: {automata.currentGeneration}");
     }
     public void InitLivingCells(CellAutomata automata) {
         var currentFrame = automata.getCurrentFrame();
@@ -81,6 +83,7 @@ public class GUIFunctions {
     }
 
     public void SetCursorPosition(CellAutomata automata, int left, int right) {
+        var previous = new Location(current.X, current.Y);
         automata.getCurrentFrame()[current.Y/2, current.X/2].Select();
         current = new Location(current.X+left, current.Y+right);
         automata.getCurrentFrame()[current.Y/2, current.X/2].Select();
