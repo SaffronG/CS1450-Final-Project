@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CellLogic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d2c32c3e86a43ae58d30916334e7af812c0efa7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cce9bb9542f44d66dfbd14e7421d51896b51347f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CellLogic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CellLogic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
