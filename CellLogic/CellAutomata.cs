@@ -1,8 +1,4 @@
-﻿using System.Dynamic;
-using System.Globalization;
-using System.Runtime.CompilerServices;
-
-namespace CellLogic;
+﻿namespace CellLogic;
 
 public class CellAutomata
 {
